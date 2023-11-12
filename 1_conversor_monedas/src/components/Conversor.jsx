@@ -1,4 +1,5 @@
 import useConversion from "../hooks/useConversion";
+import { CustomInput } from "./CustomInput";
 
 const Conversor = (props) => {
   const { convertir, currencies } = useConversion(props.currValue);
@@ -7,11 +8,11 @@ const Conversor = (props) => {
 
   return (
     <div>
-      <input type="number" placeholder="Introduce cantidad" onChange={convertir} />
+      <CustomInput onChange={convertir}/>
       <br/>
       <span name="resultadoEuro">Euros: {currencies.euros}</span>
       <br/>
-      <span name="resultadoDolar">Dolares: {currencies.dolares}</span><span>{props.currSymbol}</span>
+      <span name="resultadoDolar">{props.name} {currencies.currency}</span><span>{props.currSymbol}</span>
     </div>
   );
 };

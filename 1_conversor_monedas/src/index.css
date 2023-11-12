@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #302e2e;
+    color: white;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #696767;
+    border: 2px solid black;
+    border: 10px;
+    padding: 15px;
+}
+
+.input{
+    background-color: aqua;
+    border-bottom: 2px solid black;
+}
+
