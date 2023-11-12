@@ -1,34 +1,19 @@
-import React from "react";
-import { useState } from "react";
 import useConversion from "../hooks/useConversion";
 
-function Conversor() {
-  const [euro, setEuro] = useState(0);
-  const [dolar, setDolar] = useState(0);
-  const { convertir } = useConversion();
-
-  const handleInputChange = (value, type) => {
-    const convertedValue = convertir(value, type);
-    if (type === "euros") {
-      setEuro(value);  
-      setDolar(convertedValue.dolares);
-    } else if (type === "dolares") {
-      setDolar(value);
-      setEuro(convertedValue.euros);
-    }
-  };
+const Conversor = () => {
+  const { convertir, currencies } = useConversion();
   
   
-
   return (
     <div>
-      <input type="number" placeholder="euros" onChange={(e) => handleInputChange(e.target.value, "euros")} />
-      <span name="resultado">Dolares: {convertir(euro, "euros").dolares}</span>
-      <br />
-      <input type="number" placeholder="dolares" onChange={(e) => handleInputChange(e.target.value, "dolares")} />
-      <span name="resultado">Euros: {convertir(dolar, "dolares").euros}</span>
+      <input type="number" placeholder="euro" onChange={convertir}/>
+      <br/>
+      <span name="resultadoEuro">Euros: {currencies.euros}</span>
+      <br/>
+      <span name="resultadoDolar">Dolares: {currencies.dolares}</span>
+      
     </div>
   );
-}
+};
 
 export default Conversor;

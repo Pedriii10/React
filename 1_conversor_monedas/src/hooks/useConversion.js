@@ -1,20 +1,15 @@
+import { useState } from "react";
+
 const useConversion = () => {
-   const convertir = (valor, tipo) => {
-      if (tipo === "euros") {
-         return {
-            euros: valor * 1,
-            dolares: valor * 1.07 // Cambiado de 0.93 a 1.07
-         };
-      } else if (tipo === "dolares") {
-         return {
-            euros: valor * 0.93, // Cambiado de 1.07 a 0.93
-            dolares: valor * 1
-         };
-      }
-   }
+   
+   const [currencies, setCurrencies] = useState({euros: 0, dolares: 0});
 
-   return { convertir };
-}
-
-export default useConversion;
-
+   const convertir = (evt) => {
+       setCurrencies({euros: evt.target.value, dolares: evt.target.value * 1.07});
+   };
+ 
+   return { convertir, currencies};
+ };
+ 
+ export default useConversion;
+ 
