@@ -1,34 +1,34 @@
-import React from "react"
-import { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import  useConversion  from "../hooks/useConversion";
+import useConversion from "../hooks/useConversion";
 
-function Conversor (){
-/*
-    const [count,setCount] = useState(0);
-    const [rest,setRest] = useState(0);
-    useEffect(()=> { console.log("hola") }, [])
-*/
+function Conversor() {
+  const [euro, setEuro] = useState(0);
+  const [dolar, setDolar] = useState(0);
+  const { convertir } = useConversion();
 
-    const [euro, setEuro] = useState(0);
-    const {convertir} = useConversion();
+  const handleInputChange = (value, type) => {
+    const convertedValue = convertir(value, type);
+    if (type === "euros") {
+      setEuro(value);  
+      setDolar(convertedValue.dolares);
+    } else if (type === "dolares") {
+      setDolar(value);
+      setEuro(convertedValue.euros);
+    }
+  };
+  
+  
 
-    return (
+  return (
     <div>
-        <label htmlFor="Conversor">Cantidad A Convertir: </label>
-        <input type="number" name="conversor" onChange={(e) => setEuro(convertir(e.target.value))}/>
-        <span name="resultado"> Resultado:{euro}</span>
-
-        
-
-       {/*  <div>
-            {count}
-            <button onClick={() => setCount(count+5)}> Incrementar </button>
-            {rest}
-            <button onClick={() => setRest(rest+5)}>dasdsa</button>
-        </div>
-    */}
-    </div>)
+      <input type="number" placeholder="euros" onChange={(e) => handleInputChange(e.target.value, "euros")} />
+      <span name="resultado">Dolares: {convertir(euro, "euros").dolares}</span>
+      <br />
+      <input type="number" placeholder="dolares" onChange={(e) => handleInputChange(e.target.value, "dolares")} />
+      <span name="resultado">Euros: {convertir(dolar, "dolares").euros}</span>
+    </div>
+  );
 }
 
 export default Conversor;
