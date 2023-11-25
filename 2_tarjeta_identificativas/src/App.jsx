@@ -34,22 +34,7 @@ function App() {
 
       <ContentDiv>
         <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
-        <TarjetaCustom user={userData} /> 
+        
 
       </ContentDiv>
     </>
