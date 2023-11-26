@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import  { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import TarjetaCustom from "./TarjetaCustom";
 
 const ListadoPersonas = () => {
   const { data, error, fetchData, isLoading} = useFetch();
+  const [resultsNumber, setResultsNumber] = useState(5);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchData(resultsNumber);
+  }, [fetchData, resultsNumber]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -21,6 +22,13 @@ const ListadoPersonas = () => {
 
   return (
     <div>
+      <select onChange={(evt) => setResultsNumber(evt.target.value)}>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+
       {isLoading && "Cargando..."}
   
       {data &&

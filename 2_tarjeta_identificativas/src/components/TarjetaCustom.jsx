@@ -1,10 +1,9 @@
-import React from "react";
+
 import { Card, Header, Body, Footer, Image, UserDetails, AgeBirthday } from "../styles/StyleCard";
 
 
 
 const TarjetaCustom = (props) => {
-  // const { name, surname, username, birthdate, age, email, province, image } = user;
 
   console.log(props)
 

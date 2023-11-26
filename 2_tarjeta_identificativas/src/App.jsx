@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ListadoPersonas from "./components/ListadoPersonas"
 
@@ -11,6 +10,7 @@ const ContentDiv = styled.div`
     margin: 50px;
     padding: 15px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 `;
@@ -19,7 +19,6 @@ function App() {
 
   return (
     <>
-
       <h1>Tarjeta identificativa</h1>
 
       <ContentDiv>

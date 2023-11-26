@@ -5,9 +5,9 @@ export default function useFetch() {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
-  const fetchData = useCallback(async () => {
+  const fetchData = useCallback(async (resultNumber) => {
     try {
-      const response = await fetch("https://randomuser.me/api");
+      const response = await fetch(`https://randomuser.me/api/?results=${resultNumber}`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch data");
