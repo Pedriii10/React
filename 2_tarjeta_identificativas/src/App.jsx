@@ -1,6 +1,6 @@
 import React from "react";
-import TarjetaCustom from "./components/TarjetaCustom";
 import styled from "styled-components";
+import ListadoPersonas from "./components/ListadoPersonas"
 
 
 const ContentDiv = styled.div`
@@ -16,16 +16,6 @@ const ContentDiv = styled.div`
 `;
 
 function App() {
-  const userData = {
-    name: "Pedro",
-    surname: "Pedro Monzon",
-    username: "Pedriii10",
-    birthdate: "22/03/2003",
-    age: "20",
-    email: "dsadsadsadas",
-    province: "Elche",
-    image: "", 
-  };
 
   return (
     <>
@@ -33,9 +23,7 @@ function App() {
       <h1>Tarjeta identificativa</h1>
 
       <ContentDiv>
-        <TarjetaCustom user={userData} /> 
-        
-
+        <ListadoPersonas />
       </ContentDiv>
     </>
   );

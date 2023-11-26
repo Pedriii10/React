@@ -3,28 +3,30 @@ import { Card, Header, Body, Footer, Image, UserDetails, AgeBirthday } from "../
 
 
 
-const TarjetaCustom = ({ user }) => {
-  const { name, surname, username, birthdate, age, email, province, image } = user;
+const TarjetaCustom = (props) => {
+  // const { name, surname, username, birthdate, age, email, province, image } = user;
+
+  console.log(props)
 
   return (
     <Card>
       <Header>
-        <h2>{username}</h2>
+        <h2>{props.username}</h2>
       </Header>
       <Body>
-        <Image src={image} alt="User" />
+        <Image src={props.image} alt="User" />
         <UserDetails>
-          <span>{name}</span>
-          <span>{surname}</span>
+          <span>{props.name}</span>
+          <span>{props.surname}</span>
           <AgeBirthday>
-            <span>{birthdate}</span>
-            <span>({age})</span>
+            <span>{props.birthdate}</span>
+            <span>({props.age})</span>
           </AgeBirthday>
         </UserDetails>
       </Body>
       <Footer>
-        <span>{email}</span>
-        <span>{province}</span>
+        <span>{props.email}</span>
+        <span>{props.province}</span>
       </Footer>
     </Card>
   );
